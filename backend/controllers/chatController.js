@@ -81,7 +81,7 @@ export const getChatMessages = async (req, res) => {
     }
 
     // Check if user is in chat
-    if (!chat.participants.includes(req.user._id.toString())) {
+    if (!chat.participants.some(p => p.toString() === req.user._id.toString())) {
       return res.status(403).json({ message: 'Not authorized to view these messages' });
     }
 
@@ -112,7 +112,7 @@ export const sendMessage = async (req, res) => {
       return res.status(404).json({ message: 'Chat session not found' });
     }
 
-    if (!chat.participants.includes(req.user._id.toString())) {
+    if (!chat.participants.some(p => p.toString() === req.user._id.toString())) {
       return res.status(403).json({ message: 'Not authorized to send messages in this chat' });
     }
 

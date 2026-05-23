@@ -249,7 +249,7 @@ export const MOCK_REQUESTS = [
       avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Bob"
     },
     status: "pending",
-    type: "buy",
+    type: "sell",
     proposedPrice: 30,
     message: "Hey Bob! I sent a message, hoping we could meet up for this at Stanford next week.",
     createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString()

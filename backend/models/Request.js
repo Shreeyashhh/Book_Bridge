@@ -24,7 +24,7 @@ const requestSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ['buy', 'donate'],
+      enum: ['sell', 'donate'],
       required: true,
     },
     proposedPrice: {

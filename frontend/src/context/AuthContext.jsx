@@ -30,6 +30,12 @@ export const AuthProvider = ({ children }) => {
           setIsMockMode(false);
           setLoading(false);
           return;
+        } else if (res.status === 401) {
+          // Backend is active, but token is invalid or missing (Guest/Logged out)
+          setIsMockMode(false);
+          setUser(null);
+          setLoading(false);
+          return;
         }
       } catch (err) {
         console.warn("Backend server not found, entering local Mock-API mode.");
